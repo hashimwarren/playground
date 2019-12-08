@@ -1,4 +1,5 @@
 
+
 const todos = [{
     text: 'Buy Alex flowers',
     completed: false
@@ -21,20 +22,46 @@ const todos = [{
 
 }]
 
-// switch to objects - text, complted - true, false
-// function to remove todo by text value, case insensitive
-
-const deleteTodo = function (todos, text) {
-    const index = todos.findIndex(function (todo, index) {
-        return todo.text.toLowerCase() === text.toLowerCase()
+const sortTodos = function (todos) {
+    return todos.sort(function (a, b) {
+        if (a.completed === false) {
+            return -1
+             
+        }
     })
-    if (index > -1) {
-        return todos.splice(index, 1)
-        
-    }
     
 }
 
-deleteTodo(todos, 'help Moses practice writinG')
+sortTodos(todos)
+todos //?
+
+// find things todo
+
+    // const getThingsToDo = function (todos) {
+    //     return todos.filter(function (todo) {
+    //         return todo.completed === false
+
+    //     })
+        
+        
+    // }
+
+    // getThingsToDo(todos) //?
+
+// switch to objects - text, complted - true, false
+// function to remove todo by text value, case insensitive
+
+    // const deleteTodo = function (todos, text) {
+    //     const index = todos.findIndex(function (todo, index) {
+    //         return todo.text.toLowerCase() === text.toLowerCase()
+    //     })
+    //     if (index > -1) {
+    //         return todos.splice(index, 1)
+            
+    //     }
+        
+    // }
+
+    // deleteTodo(todos, 'help Moses practice writinG')
 
 todos //?

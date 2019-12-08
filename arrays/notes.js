@@ -12,35 +12,32 @@ const notes = [{
 
 }]
 
+
+const sortNotes = function (notes) {
+    notes.sort(function (a, b) {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+            return -1
+        } else if (b.title.toLowerCase() < a.title.toLowerCase()) {
+            
+        } else {
+            return 0
+        }
+        
+    })
+    
+}
+
+sortNotes(notes)
+
+notes //?
+
 const findNote = function (notes, noteTitle) {
     return notes.find(function (note, index) {
         return note.title.toLowerCase() === noteTitle.toLowerCase()
 
     })
-    
-    
-    
+     
 }
 
 
-    // const findNote = function (notes, noteTitle) {
-    //     const index = notes.findIndex(function (note, index) {
-    //         return note.title.toLowerCase() === noteTitle.toLowerCase()
-
-    //     })
-    //     return notes[index]
-        
-        
-    // }  
-
-const note = findNote(notes, 'Office modification')
-note //?
-
-
-
-
-
-notes //?
-notes.length //?
-notes[notes.length - 1] //?
 
