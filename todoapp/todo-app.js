@@ -1,35 +1,17 @@
-const todos = [
-  {
-    text: "Buy Alex flowers",
-    completed: false
-  },
-  {
-    text: "help Moses practice writing",
-    completed: true
-  },
-  {
-    text: "share a coding tutorial with Madison",
-    completed: true
-  },
-  {
-    text: "call Darique on his birthday",
-    completed: false
-  },
-  {
-    text: "offer to help with Derrick wedding",
-    completed: false
-  }
-];
-
-// 1. setup div container for todos
-// 2. setup filters (searchText) and wire up a new filter input to change it
-// 3. create a renderTodos function to render and rerender the latest filtered data
+let todos = [];
 
 // filter
 let filters = {
   searchText: "",
   hideCompleted: false
 };
+
+// Read todos when app starts
+
+const todosJSON = localStorage.getItem("todos");
+if (todosJSON !== null) {
+  todos = JSON.parse(todosJSON);
+}
 
 // filter todos
 
@@ -71,11 +53,11 @@ document.querySelector("#search-todos").addEventListener("input", function(e) {
 // capture addNewTodo submits
 document.querySelector("#yes").addEventListener("submit", function(e) {
   e.preventDefault();
-  let newTodo = {
+  todos.push({
     text: e.target.elements.addNewTodo.value,
     completed: false
-  };
-  todos.push(newTodo);
+  });
+  localStorage.setItem("todos", JSON.stringify(todos));
   renderTodos(todos, filters);
   e.target.elements.addNewTodo.value = "";
   console.log("working....");
