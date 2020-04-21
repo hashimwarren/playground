@@ -22,11 +22,12 @@ const renderTodos = function (todos, filters) {
 
         return searchTextMatch && hideCompletedMatch
     })
-    debugger
+
 
     const incompleteTodos = filteredTodos.filter(function (todo) {
         return !todo.completed
     })
+
 
     document.querySelector('#todos').innerHTML = ''
     document.querySelector('#todos').appendChild(generateSummaryDOM(incompleteTodos))
