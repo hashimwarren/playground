@@ -1,4 +1,3 @@
-// Fetch existing todos from localStorage
 const getSavedTodos = function () {
     const todosJSON = localStorage.getItem('todos')
 
@@ -6,6 +5,20 @@ const getSavedTodos = function () {
         return JSON.parse(todosJSON)
     } else {
         return []
+    }
+}
+
+//remove todo from list
+const removeTodo = function (id) {
+
+    const todoIndex = todos.findIndex(function (todo) {
+        return todo.id === id
+
+    })
+
+    if (todoIndex > -1) {
+        todos.splice(todoIndex, 1)
+
     }
 }
 
@@ -37,13 +50,7 @@ const renderTodos = function (todos, filters) {
     })
 }
 
-// 1. set a root div
-// 2. setup and append a checkbox (set type attribute)
-// someNode.setAttribute('type', 'checkbox')
-// 3. setup and append a span 
-// 4. setup and append a button (set text)
-
-// Get the DOM elements for an individual note
+// Get the DOM elements for an individual todo
 const generateTodoDOM = function (todo) {
     const todoEl = document.createElement('div')
     const todoText = document.createElement('span')
@@ -61,14 +68,19 @@ const generateTodoDOM = function (todo) {
     //setup the remove button
     removeButton.textContent = '✖'
     todoEl.appendChild(removeButton)
-
+    removeButton.addEventListener('click', function () {
+        removeTodo(todo.id)
+        saveTodos(todos)
+        renderTodos(todos, filters)
+    })
 
     return todoEl
 }
 
+
 // Get the DOM elements for list summary
 const generateSummaryDOM = function (incompleteTodos) {
     const summary = document.createElement('h2')
-    summary.textContent = `You have ${incompleteTodos.length} todos left`
+    summary.textContent = `You have ${incompleteTodos.length} todos left!`
     return summary
 }
