@@ -60,6 +60,12 @@ const generateTodoDOM = function (todo) {
     //setup the todo checkbox
     checkbox.setAttribute('type', 'checkbox')
     todoEl.appendChild(checkbox)
+    if (todo.completed === true) {
+        checkbox.setAttribute('checked', '')
+
+    }
+
+
 
     //setup the todos text
     todoText.textContent = todo.text
