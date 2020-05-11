@@ -29,7 +29,7 @@ const saveNotes = function (notes) {
 // Generate the DOM structure for a note
 const generateNoteDOM = function (note) {
     const noteEl = document.createElement('div')
-    const textEl = document.createElement('span')
+    const textEl = document.createElement('a')
     const button = document.createElement('button')
 
     //setup the remove note button
@@ -41,6 +41,7 @@ const generateNoteDOM = function (note) {
         renderNotes(notes, filters)
     })
 
+
     //setup the note title text
     if (note.title.length > 0) {
         textEl.textContent = note.title
@@ -48,6 +49,10 @@ const generateNoteDOM = function (note) {
         textEl.textContent = 'Unnamed note'
     }
 
+
+    //setup the edit button link
+
+    textEl.setAttribute('href', '/edit.html')
     noteEl.appendChild(textEl)
 
     return noteEl
