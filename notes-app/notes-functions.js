@@ -52,7 +52,7 @@ const generateNoteDOM = function (note) {
 
     //setup the edit button link
 
-    textEl.setAttribute('href', '/edit.html')
+    textEl.setAttribute('href', 'edit.html')
     noteEl.appendChild(textEl)
 
     return noteEl
