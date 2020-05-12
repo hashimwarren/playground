@@ -39,6 +39,7 @@ const generateNoteDOM = function (note) {
         removeNote(note.id)
         saveNotes(notes)
         renderNotes(notes, filters)
+
     })
 
 
