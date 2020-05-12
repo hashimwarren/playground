@@ -13,7 +13,7 @@ document.querySelector('#create-note').addEventListener('click', function (e) {
         body: ''
     })
     saveNotes(notes)
-    renderNotes(notes, filters)
+    location.assign('edit.html')
 })
 
 document.querySelector('#search-text').addEventListener('input', function (e) {
