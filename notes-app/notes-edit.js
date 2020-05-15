@@ -10,8 +10,34 @@ if (note === undefined) {
 
 }
 
-document.querySelector('#note-title').value = note.title
-document.querySelector('#note-body').value = note.body
+const noteTitleEl = document.querySelector('#note-title')
+const noteBodyEl = document.querySelector('#note-body')
+
+noteTitleEl.addEventListener('input', function (e) {
+    note.title = e.target.value
+    saveNotes(notes)
+    console.log(notes)
+})
+
+noteBodyEl.addEventListener('input', function (e) {
+    note.body = e.target.value
+    saveNotes(notes)
+})
+
+// populate fields with data
+noteTitleEl.value = note.title
+noteBodyEl.value = note.body
+
+
+// remove button
+document.querySelector("#remove-note")
+    .addEventListener('click', function () {
+        removeNote(note.id)
+        saveNotes(notes)
+        location.assign('index.html')
+
+    })
+
 
 // TODO challenge
 // 1. setup input event for title
