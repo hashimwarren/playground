@@ -13,7 +13,7 @@ if (note === undefined) {
 document.querySelector('#note-title').value = note.title
 document.querySelector('#note-body').value = note.body
 
-// TODO
+// for TODO
 // 1. setup input event for title
 // 2. update note object and save notes list
 // 3. reeat steps 1-2 for body
