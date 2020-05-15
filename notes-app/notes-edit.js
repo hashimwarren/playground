@@ -1,3 +1,5 @@
+const noteTitleEl = document.querySelector('#note-title')
+const noteBodyEl = document.querySelector('#note-body')
 const noteId = location.hash.substring(1)
 const notes = getSavedNotes()
 const note = notes.find(function (note) {
@@ -10,8 +12,6 @@ if (note === undefined) {
 
 }
 
-const noteTitleEl = document.querySelector('#note-title')
-const noteBodyEl = document.querySelector('#note-body')
 
 noteTitleEl.addEventListener('input', function (e) {
     note.title = e.target.value
