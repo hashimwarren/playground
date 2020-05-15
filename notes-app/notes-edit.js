@@ -9,3 +9,6 @@ if (note === undefined) {
     location.assign('index.html')
 
 }
+
+document.querySelector('#note-title').value = note.title
+document.querySelector('#note-body').value = note.body
