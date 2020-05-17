@@ -41,6 +41,17 @@ document.querySelector("#remove-note")
 window.addEventListener('storage', function (e) {
     if (e.key === 'notes') {
         notes = JSON.parse(e.newValue)
+        let note = notes.find(function (note) {
+            return note.id === noteId
+
+        })
+
+        if (note === undefined) {
+            location.assign('index.html')
+
+        }
+        noteTitleEl.value = note.title
+        noteBodyEl.value = note.body
 
     }
 
