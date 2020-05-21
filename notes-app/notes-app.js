@@ -42,11 +42,5 @@ console.log(now.toString())
 now.minute(1)
 console.log(now.minute())
 
-const vibrateButton = document.querySelector('#button-vibrate')
-vibrateButton.addEventListener('click', function () {
-    window.navigator.vibrate(200)
-    console.log('hello button')
-
-})
 
 
