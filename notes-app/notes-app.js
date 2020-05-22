@@ -36,31 +36,6 @@ window.addEventListener('storage', function (e) {
 
 })
 
-const now = new Date()
-//console.log(now.getTime())
-const timestamp = now.getTime()
-const myDate = new Date(timestamp)
-
-// console.log(now.toString())
-// console.log(`Year: ${now.getFullYear()}`)
-// console.log(`Month: ${now.getMonth()}`)
-// console.log(`Day of Month: ${now.getDate()}`)
-// console.log(`Hour: ${now.getHours()}`)
-// console.log(`Minute: ${now.getMinutes()}`)
-// console.log(`Second: ${now.getSeconds()}`)
-
-// 1 create two dates in the past
-// 2 get timestamps for both
-// 3 figure out which is first and print its time (toString)
-
-const dateOne = new Date('janury 25 2018')
-const dateTwo = new Date('janury 25 2017')
-
-if (dateOne.getTime() < dateTwo.getTime()) {
-    console.log(dateOne.toString())
-} else {
-    console.log(dateTwo.toString())
-}
 
 
 
