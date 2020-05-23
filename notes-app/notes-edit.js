@@ -1,5 +1,7 @@
 const noteTitleEl = document.querySelector('#note-title')
 const noteBodyEl = document.querySelector('#note-body')
+
+
 const noteId = location.hash.substring(1)
 let notes = getSavedNotes()
 let note = notes.find(function (note) {
@@ -15,12 +17,13 @@ if (note === undefined) {
 
 noteTitleEl.addEventListener('input', function (e) {
     note.title = e.target.value
+    note.updatedAt = moment().valueOf()
     saveNotes(notes)
-    console.log(notes)
 })
 
 noteBodyEl.addEventListener('input', function (e) {
     note.body = e.target.value
+    note.updatedAt = moment().valueOf()
     saveNotes(notes)
 })
 
