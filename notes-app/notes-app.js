@@ -6,12 +6,18 @@ const filters = {
 
 renderNotes(notes, filters)
 
+
+
 document.querySelector('#create-note').addEventListener('click', function (e) {
     const noteId = uuidv4()
+    let timestamp = moment().valueOf()
     notes.push({
         id: noteId,
         title: '',
-        body: ''
+        body: '',
+        createdAt: timestamp,
+        updatedAt: timestamp
+
     })
 
     saveNotes(notes)
@@ -36,11 +42,17 @@ window.addEventListener('storage', function (e) {
 
 })
 
+<<<<<<< HEAD
 const now = moment()
 console.log(now.toString())
 
 now.minute(1)
 console.log(now.minute())
 
+=======
+>>>>>>> lesson-75-moment
 
+// 1. add createdAt and updatedAt to new notes
+// 2. update updatedAt when someone edits a title or body
+// 3. delete old notes before testing
 
