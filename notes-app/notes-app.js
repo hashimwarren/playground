@@ -42,15 +42,6 @@ window.addEventListener('storage', function (e) {
 
 })
 
-<<<<<<< HEAD
-const now = moment()
-console.log(now.toString())
-
-now.minute(1)
-console.log(now.minute())
-
-=======
->>>>>>> lesson-75-moment
 
 // 1. add createdAt and updatedAt to new notes
 // 2. update updatedAt when someone edits a title or body
