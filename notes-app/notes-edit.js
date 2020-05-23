@@ -25,12 +25,16 @@ if (note === undefined) {
 noteTitleEl.addEventListener('input', function (e) {
     note.title = e.target.value
     note.updatedAt = moment().valueOf()
+    lastEditEl.textContent = moment(note.updatedAt).fromNow()
+
     saveNotes(notes)
 })
 
 noteBodyEl.addEventListener('input', function (e) {
     note.body = e.target.value
     note.updatedAt = moment().valueOf()
+    lastEditEl.textContent = moment(note.updatedAt).fromNow()
+
     saveNotes(notes)
 })
 
@@ -62,6 +66,8 @@ window.addEventListener('storage', function (e) {
         }
         noteTitleEl.value = note.title
         noteBodyEl.value = note.body
+        lastEditEl.textContent = moment(note.updatedAt).fromNow()
+
 
     }
 
