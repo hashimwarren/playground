@@ -1,17 +1,9 @@
 // fetch existing todos from local storage
 const getSavedTodos = () => {
     const todosJSON = localStorage.getItem('todos')
+    return todosJSON !== null ? JSON.parse(todosJSON) : []
 
-
-
-    if (todosJSON !== null) {
-        return JSON.parse(todosJSON)
-    } else {
-        return []
-    }
 }
-
-//madison
 
 // change completed status
 const toggleTodo = (todo) => {
