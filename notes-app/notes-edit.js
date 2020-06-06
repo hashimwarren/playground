@@ -1,3 +1,5 @@
+'use strict'
+
 const noteTitleEl = document.querySelector('#note-title')
 const noteBodyEl = document.querySelector('#note-body')
 const lastEditEl = document.querySelector('#last-edited')
