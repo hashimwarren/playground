@@ -3,8 +3,10 @@
 // A 90-100, B 80-90, C 70-79, D 60-69, F 0-59
 
 const gradeCalculator = function (studentScore, totalPossibleScore = 100) {
+    if (typeof studentScore !== "number" || typeof totalPossibleScore !== 'number') {
+        throw Error('You need a number 🔢')
 
-    if (typeof studentScore === "number") {
+    } else {
         const gradePercent = (studentScore / totalPossibleScore) * 100
         let letterGrade
 
@@ -25,9 +27,6 @@ const gradeCalculator = function (studentScore, totalPossibleScore = 100) {
         }
         return `You got a ${letterGrade} (${gradePercent}%)`
 
-    } else {
-        throw Error('You need a number 🔢')
-
     }
 
 
@@ -35,11 +34,9 @@ const gradeCalculator = function (studentScore, totalPossibleScore = 100) {
 }
 
 try {
-    const studentGrade = gradeCalculator(true) //?
+    const studentGrade = gradeCalculator(80) //?
 
 } catch (e) {
-    console.log('catch block is running');
-
-
+    console.log(e.message);
 }
 
