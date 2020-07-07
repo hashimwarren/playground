@@ -29,11 +29,22 @@ Person.prototype.setName = function (fullName) {
 }
 
 const me = new Person('Hashim', 'Warren', 40, ['Writing Copy', 'Writing Code'])
+
+me.getBio = function () {
+    return `this is fake`
+
+}
+
 me.setName('Derrick Waller')
 //console.log(me);
 console.log(me.getBio());
 
 
 const person2 = new Person('Clancey', 'Turner', 38)
-//console.log(person2);
+
+
+
+
+
+console.log(person2.getBio()); //?
 
