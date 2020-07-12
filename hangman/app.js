@@ -1,14 +1,8 @@
+// primitive value: string, boolena, number, boolean, null, undefined
+
 // product --> Object.prototype --> null
+// Array: myArray --> Array.prptype --> Object.prototye --> null
 
-const product = new Object({
-    name: 'War of Art'
-})
+const getScore = () => 1
+console.log(getScore);
 
-product.name = 'Rest'
-
-Object.prototype.hasOwnProperty = () => 'this is the new function'
-
-// hasOwnProperty
-
-console.log(product.hasOwnProperty('hasOwnProperty'))
-console.log(product)
