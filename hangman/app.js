@@ -15,40 +15,34 @@ window.addEventListener('keypress', (e) => {
     guessesEl.textContent = game1.statusMessage
 })
 
-// Making an HTTP request
-const request = new XMLHttpRequest()
+getPuzzle((error, puzzle) => {
 
-request.addEventListener('readystatechange', (e) => {
-    if (e.target.readyState === 4 && e.target.status === 200) {
-        const data = JSON.parse(e.target.responseText)
-        console.log(data)
-    } else if (e.target.readyState === 4) {
-        console.log('An error has taken place');
+    if (error) {
+        console.log(`Error: ${error}`);
+
+    } else {
+        console.log(puzzle);
+
     }
+
 })
 
-request.open('GET', 'http://puzzle.mead.io/puzzle?wordCount=3')
-request.send()
 
+// // Making an HTTP request
 
-// 1. make a new request for al countries
-// 2. parse the responsetext to get back an array of objects
-// 3. find your country object by its country code (alpha2code)
-// 4. print the full country name
+// const countryCode = 'US'
+// const countryRequest = new XMLHttpRequest()
 
-const countryCode = 'US'
-const countryRequest = new XMLHttpRequest()
+// countryRequest.addEventListener('readystatechange', (e) => {
+//     if (e.target.readyState === 4 && e.target.status === 200) {
+//         const data = JSON.parse(e.target.responseText)
+//         const country = data.find((country) => country.alpha2Code === countryCode)
+//         console.log("country name: " + country.name)
+//         console.log(data);
+//     } else if (e.target.readyState === 4) {
+//         console.log('An error has taken place');
+//     }
+// })
 
-countryRequest.addEventListener('readystatechange', (e) => {
-    if (e.target.readyState === 4 && e.target.status === 200) {
-        const data = JSON.parse(e.target.responseText)
-        const country = data.find((country) => country.alpha2Code === countryCode)
-        console.log("country name: " + country.name)
-        console.log(data);
-    } else if (e.target.readyState === 4) {
-        console.log('An error has taken place');
-    }
-})
-
-countryRequest.open('GET', 'http://restcountries.eu/rest/v2/all')
-countryRequest.send()
+// countryRequest.open('GET', 'http://restcountries.eu/rest/v2/all')
+// countryRequest.send()
