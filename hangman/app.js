@@ -1,6 +1,3 @@
-// HTTP (Hypertext Transfer Protocol)
-// Request - What do we want to do
-// Response - What was actually done
 const puzzleEl = document.querySelector('#puzzle')
 const guessesEl = document.querySelector('#guesses')
 const game1 = new Hangman('Car Parts', 2)
@@ -21,7 +18,7 @@ getPuzzle((error, puzzle) => {
         console.log(`Error: ${error}`);
 
     } else {
-        console.log(puzzle);
+        console.log(puzzle)
 
     }
 
