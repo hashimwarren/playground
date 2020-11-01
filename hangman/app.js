@@ -24,7 +24,7 @@ getPuzzle('3', (error, puzzle) => {
 
 })
 
-getCountryDetails('JM', (error, country) => {
+getCountryDetails("JM", (error, country) => {
 
     if (error) {
         console.log(`Error: ${error}`);
