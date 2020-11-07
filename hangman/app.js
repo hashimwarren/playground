@@ -20,15 +20,10 @@ getPuzzle('3').then((puzzle) => {
 
 })
 
-getCountryDetails("JM", (error, country) => {
-
-    if (error) {
-        console.log(`Error: ${error}`);
-
-    } else {
-        console.log(country.name);
-
-    }
+getCountryDetails("JM").then((details) => {
+    console.log(details.name);
+}, (err) => {
+    console.log(err);
 })
 
 

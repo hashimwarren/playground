@@ -6,7 +6,7 @@ const getPuzzle = (wordCount) => new Promise((resolve, reject) => {
             const data = JSON.parse(e.target.responseText)
             resolve(data.puzzle)
         } else if (e.target.readyState === 4) {
-            reject('An error has taken place')
+            reject('An error has taken place', undefined)
 
         }
     })
@@ -16,7 +16,7 @@ const getPuzzle = (wordCount) => new Promise((resolve, reject) => {
 
 })
 
-const getCountryDetails = (code, callback) => {
+const getCountryDetails = (code) => new Promise((resolve, reject) => {
 
     const countryRequest = new XMLHttpRequest()
 
@@ -26,13 +26,13 @@ const getCountryDetails = (code, callback) => {
 
             const country = data.find((country) => country.alpha2Code === code)
 
-            callback(undefined, country)
+            resolve(country)
         } else if (e.target.readyState === 4) {
-            console.log(callback('An error has taken place', undefined))
+            reject('An error has taken place')
         }
     })
 
     countryRequest.open('GET', 'http://restcountries.eu/rest/v2/all')
     countryRequest.send()
 
-}
+}) 
