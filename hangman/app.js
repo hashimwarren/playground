@@ -27,5 +27,16 @@ getCountryDetails("JM").then((details) => {
 })
 
 
-// // Making an HTTP request
+fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
+    if (response.status === 200) {
+        return response.json() // returns another Promise
 
+    } else {
+        throw new Error('unable to fetch puzzle')
+    }
+
+}).then((data) => {
+    console.log(data.puzzle)
+}).catch((error) => {
+    console.log(error);
+})
