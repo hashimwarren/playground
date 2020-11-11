@@ -26,11 +26,11 @@ getPuzzle(3).then((puzzle) => {
 
 // })
 
-// getCountryDetails("JM").then((details) => {
-//     console.log(details.name);
-// }, (err) => {
-//     console.log(err);
-// })
+getCountryDetails("JM").then((details) => {
+    console.log(details.name);
+}).catch((err) => {
+    console.log(`Error: ${err}`);
+})
 
 
 // fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
