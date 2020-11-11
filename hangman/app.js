@@ -12,31 +12,37 @@ window.addEventListener('keypress', (e) => {
     guessesEl.textContent = game1.statusMessage
 })
 
-getPuzzle('3').then((puzzle) => {
-    console.log(puzzle)
-
-}, (err) => {
+getPuzzle(3).then((puzzle) => {
+    console.log(puzzle);
+}).catch((err) => {
     console.log(`Error: ${err}`);
-
 })
 
-getCountryDetails("JM").then((details) => {
-    console.log(details.name);
-}, (err) => {
-    console.log(err);
-})
+// .then((puzzle) => {
+//     console.log(puzzle)
+
+// }, (err) => {
+//     console.log(`Error: ${err}`);
+
+// })
+
+// getCountryDetails("JM").then((details) => {
+//     console.log(details.name);
+// }, (err) => {
+//     console.log(err);
+// })
 
 
-fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
-    if (response.status === 200) {
-        return response.json() // returns another Promise
+// fetch('http://puzzle.mead.io/puzzle', {}).then((response) => {
+//     if (response.status === 200) {
+//         return response.json() // returns another Promise
 
-    } else {
-        throw new Error('unable to fetch puzzle')
-    }
+//     } else {
+//         throw new Error('unable to fetch puzzle')
+//     }
 
-}).then((data) => {
-    console.log(data.puzzle)
-}).catch((error) => {
-    console.log(error);
-})
+// }).then((data) => {
+//     console.log(data.puzzle)
+// }).catch((error) => {
+//     console.log(error);
+// })
