@@ -33,10 +33,16 @@ const getCountryDetails = (code) => {
 
 
 const getLocation = () => {
-    debugger
 
     return fetch("https://ipinfo.io/json?50451a220a5363").then((location) => {
-        return location.json()
+        if (location.status === 200) {
+            return location.json()
+
+        } else {
+            throw new Error('Unable to fetch location')
+
+        }
+
 
     })
 
