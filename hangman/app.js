@@ -33,4 +33,11 @@ getCountryDetails("JM").then((details) => {
 })
 
 
-getLocation()
+getLocation().then((location) => {
+
+    const { _ip, city, region, country } = location
+    console.log(`You live in ${city} in ${region} in ${country}`)
+
+}).catch((err) => {
+    console.log(`Error: ${err}`);
+})
