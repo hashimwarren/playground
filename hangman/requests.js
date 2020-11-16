@@ -32,3 +32,17 @@ const getCountryDetails = (code) => {
 }
 
 
+const getLocation = () => {
+
+    fetch("https://ipinfo.io/jjson?50451a220a5363").then((location) => {
+        location.json().then((locationData) => {
+            const { _ip, city, region, country } = locationData
+            console.log(`You live in ${city} in ${region} in ${country}`)
+
+        }).catch((err) => {
+            console.log(`Error: ${err}`);
+        })
+
+    })
+
+}
