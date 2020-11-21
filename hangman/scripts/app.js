@@ -10,7 +10,15 @@ window.addEventListener('keypress', (e) => {
 })
 
 const render = () => {
-    puzzleEl.textContent = game1.puzzle
+
+    puzzleEl.textContent = ""
+    puzzleArray = game1.puzzle.split('').map((letter) => {
+        const puzzleSpan = document.createElement('span')
+        puzzleSpan.innerHTML = letter
+        puzzleEl.appendChild(puzzleSpan)
+
+    })
+
     guessesEl.textContent = game1.statusMessage
 
 }
