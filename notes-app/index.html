@@ -5,28 +5,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
-  <title>Notes App</title>
+  <link rel="stylesheet" href="styles/styles.css" type="text/css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <title>Pachyderm</title>
 </head>
 
 <body>
-  <h1>Notes App</h1>
-  <h2>Take Notes 🐘 Never Forget</h2>
+  <header class="header">
 
-  <input type="text" name="" id="search-text" placeholder="filter todos" />
-  <select id="filter-by">
-    <option value="byEdited">Sort by last edited</option>
-    <option value="byCreated">Sort by recently created</option>
-    <option value="alphabetical">Sort alphbeticaly</option>
-  </select>
+    <div class="container">
+      <h1 class="header__title">Pachyderm 🐘</h1>
+      <h2 class="header__subtitle">Take Notes. Never Forget.</h2>
+    </div>
+  </header>
+  <div class="actions">
+    <div class="actions__container">
 
-  <div id="notes"></div>
-  <button id="create-note"> Create Notes</button>
+      <input type="text" class="input" id="search-text" placeholder="filter pachys" />
+      <select id="filter-by" class="dropdown ">
+        <option value="byEdited">Sort by last edited</option>
+        <option value="byCreated">Sort by recently created</option>
+        <option value="alphabetical">Sort alphbeticaly</option>
+      </select>
+
+    </div>
+  </div>
+
+  <div class="container">
+    <div id="notes"></div>
+    <button id="create-note" class="button"> 📝 Create a Pachy</button>
+  </div>
+
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment-with-locales.min.js"></script>
-  <script src="uuidv4.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
-  <script src="notes-functions.js"></script>
-  <script src="notes-app.js"></script>
+  <script src="scripts/uuidv4.js"></script>
+  <script src="scripts/notes-functions.js"></script>
+  <script src="scripts/notes-app.js"></script>
 </body>
 
 </html>
