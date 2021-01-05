@@ -1,4 +1,4 @@
-const name = 'hashim'
+const name = 'alex'
 console.log(name);
 
 class Hangman {
