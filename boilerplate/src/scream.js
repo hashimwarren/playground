@@ -1,4 +1,6 @@
-export const scream = function (word) {
-    return word.toUpperCase().concat('!')
+const scream = function (word) {
+    return word.toUpperCase().concat('😱')
 
 }
+
+export { scream as default }
